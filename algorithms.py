@@ -1,3 +1,5 @@
+"""Algorithm File"""
+
 from functions import *
 from drawing import *
 import networkx as nx
@@ -44,7 +46,8 @@ def prims_algorithm(G, starting_vertex, show_graph, show_cost):
     while is_spanning(G,T)==False: #check functions
         e = min_prims_edge(G,T)
         T.add_edge(e[0],e[1])
-        
+        if show_cost == True:
+            print(cost(G,e))
         """
         Display subtree.
         ------
@@ -57,13 +60,11 @@ def prims_algorithm(G, starting_vertex, show_graph, show_cost):
         Show Cost
         --------
         """
-        if show_cost == True: #display the weight of the graph
-            total_cost = 0
-            for x in E(T): #add up all the weights
-                total_cost = total_cost + cost(G,x)
-                print(total_cost)
-        
-    print("The cost of the spanning tree is: " + str(total_cost))
+    if show_cost == True: #display the weight of the graph
+        total_cost = 0
+        for x in E(T): #add up all the weights
+            total_cost = total_cost + cost(G,x)
+        print("The cost of the spanning tree is: " + str(total_cost))
         
     """
     Return Function

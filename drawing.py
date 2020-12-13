@@ -11,12 +11,12 @@ functions:
     * show_weighted_graph- shows our weighted graph 
     * draw_subtree - drawing  and showing the weighted graph's corresponding subtree
 """
-import networkx as nx 
-import matplotlib.pyplot as plt
-import numpy as np
+import networkx as nx    ## import NetworkX to create our network attributes
+import matplotlib.pyplot as plt   ## inport matplotlib to plot our subtree and weighted graph
+import numpy as np             ### import NumPy for arraw manipulations
 
 def show_weighted_graph(G):
-     """ creates and shows the weightwed graph
+    """ creates and shows the weightwed graph
 
     Parameters
     ----------
